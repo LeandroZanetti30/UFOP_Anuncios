@@ -90,17 +90,18 @@ Os anúncios poderão ser organizados em categorias, como:
 
 ### Front-end
 
-- HTML5
-- CSS3
-- JavaScript
+- Next.js
+- React
+- Tailwind CSS
+- TypeScript
 
 ### Back-end
 
-- Node.js / Express
+- Next.js API Routes
 
 ### Banco de dados
 
-- MySQL
+- Firebase
 
 ### Controle de versão
 
@@ -112,6 +113,7 @@ Os anúncios poderão ser organizados em categorias, como:
 - Nome do Integrante 1
 - Leandro Marcos Mendes Zanetti
 - Pedro Augusto Carneiro de Oliveira
+- César Gabriel de Paula Batista
 
 
 # Link para o quadro Kanban
