@@ -110,7 +110,7 @@ Os anúncios poderão ser organizados em categorias, como:
 # Integrantes da Equipe
 
 - Nome do Integrante 1
-- Nome do Integrante 2
+- Leandro Marcos Mendes Zanetti
 - Pedro Augusto Carneiro de Oliveira
 
 
