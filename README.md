@@ -1,5 +1,5 @@
 # UFOP Anúncios
-Projeto para a disciplina de Programação Web
+Projeto para a disciplina: Programação Web
 
 ## Ideia Geral do Projeto
 
@@ -9,12 +9,13 @@ A proposta do sistema é criar um ambiente simples, organizado e acessível onde
 
 O site funciona como um intermediador de anúncios, ou seja, **não realiza pagamentos nem vendas diretamente pela plataforma**. O contato entre comprador e anunciante acontece externamente, por meio das informações disponibilizadas no anúncio (WhatsApp, Instagram, telefone ou e-mail).
 
-O foco principal do projeto é oferecer uma solução prática e segura para a comunidade universitária da UFOP, incentivando a reutilização de produtos e facilitando negociações locais entre estudantes.
-
+O foco principal do projeto é oferecer uma solução prática para a comunidade universitária da UFOP, incentivando a reutilização de produtos e facilitando negociações locais entre estudantes.
 
 # Descrição Geral do Sistema
 
 O sistema consiste em uma aplicação web de anúncios voltada para universitários da UFOP.
+
+Usuários visitantes poderão acessar os anúncios sem necessidade de login. Já usuários autenticados poderão criar, editar e excluir seus próprios anúncios.
 
 ## Funcionalidades principais
 
@@ -27,7 +28,6 @@ Usuários visitantes poderão acessar a plataforma sem necessidade de login para
 - navegar por categorias;
 - visualizar informações dos itens;
 - entrar em contato com os anunciantes.
-
 
 ### Login de usuários
 
@@ -50,11 +50,20 @@ Após autenticação, o anunciante poderá cadastrar novos produtos contendo:
 - fotos do produto;
 - informações de contato.
 
+### Gerenciamento de anúncios
+
+O anunciante poderá:
+
+- editar anúncios publicados;
+- excluir anúncios manualmente quando o item for vendido ou não estiver mais disponível.
+
+### Remoção automática de anúncios
+
+Os anúncios poderão possuir um prazo de expiração definido pelo sistema. Após determinado período sem atualização, o anúncio será removido automaticamente da plataforma, evitando anúncios desatualizados e melhorando a organização do sistema.
 
 ### Upload de imagens
 
 Cada anúncio poderá conter imagens do produto para melhorar a visualização e aumentar a confiabilidade do anúncio.
-
 
 ### Contato entre comprador e vendedor
 
@@ -66,7 +75,6 @@ O comprador deverá entrar em contato diretamente com o anunciante para:
 - combinar entrega;
 - realizar a compra.
 
-
 ### Categorias de produtos
 
 Os anúncios poderão ser organizados em categorias, como:
@@ -77,7 +85,6 @@ Os anúncios poderão ser organizados em categorias, como:
 - materiais acadêmicos;
 - acessórios;
 - outros.
-
 
 ## Tecnologias previstas
 
@@ -106,8 +113,6 @@ Os anúncios poderão ser organizados em categorias, como:
 - Nome do Integrante 2
 - Nome do Integrante 3
 
-
 # Protótipo das telas do site:
+
 <img width="1536" height="1024" alt="Prototipo" src="https://github.com/user-attachments/assets/8f0d85df-fe21-4c52-bfa8-f4661e1606dc" />
-
-
