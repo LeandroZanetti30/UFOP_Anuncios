@@ -110,7 +110,6 @@ Os anúncios poderão ser organizados em categorias, como:
 
 # Integrantes da Equipe
 
-- Nome do Integrante 1
 - Leandro Marcos Mendes Zanetti
 - Pedro Augusto Carneiro de Oliveira
 - César Gabriel de Paula Batista
