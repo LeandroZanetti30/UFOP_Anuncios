@@ -107,6 +107,7 @@ Os anúncios poderão ser organizados em categorias, como:
 - Nome do Integrante 3
 
 
+# Protótipo das telas do site:
 <img width="1536" height="1024" alt="Prototipo" src="https://github.com/user-attachments/assets/8f0d85df-fe21-4c52-bfa8-f4661e1606dc" />
 
 
