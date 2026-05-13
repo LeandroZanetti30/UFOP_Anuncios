@@ -111,7 +111,7 @@ Os anúncios poderão ser organizados em categorias, como:
 
 - Nome do Integrante 1
 - Nome do Integrante 2
-- Nome do Integrante 3
+- Pedro Augusto Carneiro de Oliveira
 
 
 # Link para o quadro Kanban
