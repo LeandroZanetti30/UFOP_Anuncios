@@ -41,7 +41,6 @@ function ProductCard({ item }: { item: Product }) {
     >
       <div className="relative">
         {item.images[0] ? (
-          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={item.images[0]}
             alt={item.title}
@@ -115,7 +114,6 @@ export default function ListingsGrid() {
     setProducts(getAllUserProducts());
   }, []);
 
-  // null = still loading (avoid flash of empty state on SSR)
   if (products === null) return null;
 
   return (

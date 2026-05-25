@@ -49,7 +49,6 @@ export default function NovoAnuncio() {
       };
       reader.readAsDataURL(file);
     });
-    // reset so same file can be re-selected
     e.target.value = "";
   }
 
@@ -94,7 +93,7 @@ export default function NovoAnuncio() {
 
           <form onSubmit={handleSubmit} noValidate>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* ── Left: form fields ── */}
+              {/* Form fields */}
               <div className="lg:col-span-2 flex flex-col gap-5">
                 {/* Categoria */}
                 <div className="bg-white rounded-xl p-5 shadow-sm">
@@ -237,7 +236,7 @@ export default function NovoAnuncio() {
                 </div>
               </div>
 
-              {/* ── Right: image upload ── */}
+              {/* Image upload */}
               <div className="flex flex-col gap-4">
                 <div className="bg-white rounded-xl p-5 shadow-sm">
                   <p className="text-sm font-medium text-gray-700 mb-3">
@@ -291,7 +290,6 @@ export default function NovoAnuncio() {
                           key={i}
                           className="relative rounded-lg overflow-hidden aspect-square"
                         >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={src}
                             alt={`Foto ${i + 1}`}
@@ -320,7 +318,7 @@ export default function NovoAnuncio() {
               </div>
             </div>
 
-            {/* ── Action buttons ── */}
+            {/* Action buttons */}
             <div className="mt-6 flex items-center justify-end gap-3">
               <Link
                 href="/"

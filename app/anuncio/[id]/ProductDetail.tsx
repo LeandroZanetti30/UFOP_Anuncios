@@ -91,12 +91,11 @@ export default function ProductDetail({ id }: { id: string }) {
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-            {/* ── Left column ── */}
+            {/* Left column */}
             <div className="lg:col-span-2 flex flex-col gap-5">
               {/* Main image */}
               <div className="bg-white rounded-xl shadow-sm overflow-hidden">
                 {hasImages ? (
-                  // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={product.images[activeImg]}
                     alt={product.title}
@@ -124,7 +123,6 @@ export default function ProductDetail({ id }: { id: string }) {
                           activeImg === i ? "border-primary-600" : "border-transparent"
                         }`}
                       >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={src} alt="" className="w-full h-full object-cover" />
                       </button>
                     ))}
@@ -163,7 +161,7 @@ export default function ProductDetail({ id }: { id: string }) {
 
             </div>
 
-            {/* ── Right column ── */}
+            {/* Right column */}
             <div className="flex flex-col gap-4">
               <div className="bg-white rounded-xl shadow-sm p-5">
                 <span className="inline-block text-xs font-medium text-primary-700 bg-primary-50 px-2.5 py-1 rounded-full mb-3">
