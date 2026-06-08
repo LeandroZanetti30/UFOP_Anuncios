@@ -1,15 +1,23 @@
 "use client";
 
-import { useState, useRef, ChangeEvent, FormEvent } from "react";
+import { useState, useRef, ChangeEvent, FormEvent, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import SiteHeader from "@/app/components/SiteHeader";
 import SiteFooter from "@/app/components/SiteFooter";
 import { CATEGORIES, CONDITIONS, saveProduct } from "@/app/lib/products";
+import { useAuth } from "@/app/lib/auth-context";
 
 export default function NovoAnuncio() {
   const router = useRouter();
+  const { user, loading } = useAuth();
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push("/login");
+    }
+  }, [user, loading, router]);
 
   const [form, setForm] = useState({
     category: "",
@@ -56,7 +64,7 @@ export default function NovoAnuncio() {
     setImages((prev) => prev.filter((_, i) => i !== index));
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) {
@@ -64,7 +72,7 @@ export default function NovoAnuncio() {
       return;
     }
     setSubmitting(true);
-    const product = saveProduct({
+    const product = await saveProduct({
       title: form.title.trim(),
       category: form.category,
       description: form.description.trim(),
@@ -73,6 +81,8 @@ export default function NovoAnuncio() {
       contact: form.contact.trim(),
       city: form.city.trim(),
       images,
+      userId: user!.uid,
+      userEmail: user!.email ?? "",
     });
     router.push(`/anuncio/${product.id}`);
   }

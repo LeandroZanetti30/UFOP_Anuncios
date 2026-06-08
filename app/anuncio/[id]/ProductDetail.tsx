@@ -41,7 +41,7 @@ export default function ProductDetail({ id }: { id: string }) {
   const [activeImg, setActiveImg] = useState(0);
 
   useEffect(() => {
-    setProduct(getProduct(id) ?? null);
+    getProduct(id).then((p) => setProduct(p));
   }, [id]);
 
   if (product === undefined) {

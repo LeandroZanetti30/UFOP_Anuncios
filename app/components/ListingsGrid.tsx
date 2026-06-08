@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Product, getAllUserProducts } from "@/app/lib/products";
+import { Product, getAllProducts } from "@/app/lib/products";
 
 function HeartIcon() {
   return (
@@ -111,7 +111,7 @@ export default function ListingsGrid() {
   const [products, setProducts] = useState<Product[] | null>(null);
 
   useEffect(() => {
-    setProducts(getAllUserProducts());
+    getAllProducts().then(setProducts);
   }, []);
 
   if (products === null) return null;
