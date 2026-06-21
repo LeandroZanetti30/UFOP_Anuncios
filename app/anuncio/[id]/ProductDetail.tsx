@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import SiteHeader from "@/app/components/SiteHeader";
 import SiteFooter from "@/app/components/SiteFooter";
-import { Product, getProduct } from "@/app/lib/products";
+import { Product, getProduct, deleteProduct } from "@/app/lib/products";
+import { useAuth } from "@/app/lib/auth-context";
 
 function formatPrice(value: number) {
   return `R$ ${value.toLocaleString("pt-BR", { minimumFractionDigits: 0 })}`;
@@ -37,12 +39,24 @@ function SpecRow({ label, value }: { label: string; value: string }) {
 }
 
 export default function ProductDetail({ id }: { id: string }) {
+  const { user } = useAuth();
+  const router = useRouter();
   const [product, setProduct] = useState<Product | null | undefined>(undefined);
   const [activeImg, setActiveImg] = useState(0);
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
     getProduct(id).then((p) => setProduct(p));
   }, [id]);
+
+  async function handleDelete() {
+    if (!confirm("Tem certeza que deseja remover este anúncio?")) return;
+    setDeleting(true);
+    await deleteProduct(id);
+    router.push("/");
+  }
+
+  const isOwner = user && product && user.uid === product.userId;
 
   if (product === undefined) {
     return (
@@ -216,6 +230,24 @@ export default function ProductDetail({ id }: { id: string }) {
               >
                 ← Voltar para os anúncios
               </Link>
+
+              {isOwner && (
+                <div className="flex flex-col gap-2">
+                  <Link
+                    href={`/anuncio/${id}/editar`}
+                    className="w-full text-center text-sm font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 py-2.5 rounded-lg transition-colors"
+                  >
+                    Editar anúncio
+                  </Link>
+                  <button
+                    onClick={handleDelete}
+                    disabled={deleting}
+                    className="w-full text-sm font-medium text-red-600 bg-white border border-red-200 hover:bg-red-50 py-2.5 rounded-lg transition-colors disabled:opacity-60"
+                  >
+                    {deleting ? "Removendo..." : "Remover anúncio"}
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

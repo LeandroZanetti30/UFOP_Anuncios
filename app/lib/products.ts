@@ -4,6 +4,8 @@ import {
   getDocs,
   getDoc,
   doc,
+  deleteDoc,
+  updateDoc,
   orderBy,
   query,
   serverTimestamp,
@@ -56,4 +58,15 @@ export async function saveProduct(
     createdAt: serverTimestamp(),
   });
   return { ...data, id: docRef.id, createdAt: new Date().toISOString() };
+}
+
+export async function deleteProduct(id: string): Promise<void> {
+  await deleteDoc(doc(db, "products", id));
+}
+
+export async function updateProduct(
+  id: string,
+  data: Partial<Omit<Product, "id" | "createdAt" | "userId" | "userEmail">>,
+): Promise<void> {
+  await updateDoc(doc(db, "products", id), data);
 }
