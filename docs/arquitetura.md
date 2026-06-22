@@ -2,7 +2,7 @@
 
 ## 1. Visão Geral
 
-O sistema UFOP Anúncios é uma plataforma web para compra e venda de itens usados entre estudantes universitários. A arquitetura segue o modelo **BaaS (Backend as a Service)**: o frontend gerencia toda a lógica de apresentação e regras de negócio no lado do cliente, enquanto o Firebase fornece autenticação e banco de dados sem necessidade de um servidor próprio.
+O sistema UFOP Anúncios é uma plataforma web para compra e venda de itens entre estudantes universitários. A arquitetura segue o modelo **BaaS (Backend as a Service)**: o frontend gerencia toda a lógica de apresentação e regras de negócio no lado do cliente, enquanto o Firebase fornece autenticação e banco de dados sem necessidade de um servidor próprio.
 
 ---
 
