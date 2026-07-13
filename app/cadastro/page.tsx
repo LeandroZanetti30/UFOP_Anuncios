@@ -18,6 +18,12 @@ export default function Cadastro() {
     e.preventDefault();
     setError("");
 
+    const ufopDomains = ["@aluno.ufop.edu.br", "@ufop.edu.br"];
+    if (!ufopDomains.some((d) => email.endsWith(d))) {
+      setError("Use seu email institucional da UFOP (@aluno.ufop.edu.br ou @ufop.edu.br).");
+      return;
+    }
+
     if (password.length < 6) {
       setError("A senha deve ter pelo menos 6 caracteres.");
       return;
@@ -54,7 +60,7 @@ export default function Cadastro() {
             <span className="font-bold text-gray-900 text-xl">UFOP <span className="text-primary-700">Anúncios</span></span>
           </Link>
           <h1 className="text-2xl font-bold text-gray-900 mt-6">Criar conta</h1>
-          <p className="text-sm text-gray-500 mt-1">Cadastre-se para publicar seus anúncios</p>
+          <p className="text-sm text-gray-500 mt-1">Use seu email institucional da UFOP</p>
         </div>
 
         <div className="bg-white rounded-2xl shadow-sm p-8">
@@ -77,7 +83,7 @@ export default function Cadastro() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="seu@email.com"
+                placeholder="seu.nome@aluno.ufop.edu.br"
                 required
                 className="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm text-gray-700 outline-none focus:ring-2 focus:ring-primary-600 transition"
               />
